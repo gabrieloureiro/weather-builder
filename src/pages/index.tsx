@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { WeatherContentProvider } from "modules/Weather/context";
 import dynamic from "next/dynamic";
 

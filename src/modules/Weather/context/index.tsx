@@ -24,7 +24,8 @@ export const WeatherContentProvider: React.FC = ({ children }) => {
   const [currentLat, setCurrentLat] = useState<number>(0);
   const [currentLon, setCurrentLon] = useState<number>(0);
 
-  const { data, isLoading } = useWeather({ lat: currentLat, lon: currentLon });
+  const { data, isFetched, isFetching, isLoading, isError, refetch } =
+    useWeather({ lat: currentLat, lon: currentLon });
 
   const [currentContent, setCurrentContent] = useState<WeatherQueryResponse>(
     {} as WeatherQueryResponse
@@ -36,8 +37,12 @@ export const WeatherContentProvider: React.FC = ({ children }) => {
     () => ({
       weather: currentContent,
       isLoading,
+      isFetched,
+      isFetching,
+      isError,
+      refetch,
     }),
-    [currentContent, isLoading]
+    [currentContent, isError, isFetched, isFetching, isLoading, refetch]
   );
 
   useEffect(() => {

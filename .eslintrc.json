@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "eslint-config-prettier"
+  ],
+  "plugins": [
+    "react-hooks",
+    "eslint-plugin-prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/explicit-module-boundary-type": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": "error"
+  }
+}

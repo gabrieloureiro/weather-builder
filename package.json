@@ -1,5 +1,5 @@
 {
-  "name": "builders-challenge",
+  "name": "weather-builder",
   "private": true,
   "scripts": {
     "dev": "next dev",

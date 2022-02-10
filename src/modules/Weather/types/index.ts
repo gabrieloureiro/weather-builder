@@ -26,6 +26,7 @@ export type WeatherQueryParams = {
   lat: number;
   lon: number;
   units?: string;
+  lang?: string;
 };
 
 export type WeatherQueryResponse = {

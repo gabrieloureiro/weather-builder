@@ -10,9 +10,9 @@ const ArrowButton = (props) => (
     width="41px"
     height="40px"
     borderRadius="50%"
-    backgroundColor="white."
+    backgroundColor="white"
     border="1px solid #ddd"
-    color="primary.default"
+    color="cyan.400"
     boxShadow="md"
     {...props}
   />

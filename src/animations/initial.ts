@@ -1,4 +1,4 @@
-const INITIAL_ANIMATION = {
+export const INITIAL_ANIMATION = {
   unMounted: { opacity: 0, y: 50 },
   mounted: {
     opacity: 1,
@@ -17,5 +17,3 @@ const INITIAL_ANIMATION = {
     },
   },
 };
-
-export default INITIAL_ANIMATION;

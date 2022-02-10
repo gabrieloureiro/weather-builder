@@ -4,13 +4,20 @@ import {
   WeatherQueryParams,
   WeatherQueryResponse,
 } from "modules/Weather/types";
+import { useLanguage } from "context";
+import { formatLang, formatUnits } from "../utils";
 
 const WEATHER_CACHE = "weather-cache";
 
 export const useWeather = (
   params: WeatherQueryParams
 ): UseQueryResult<WeatherQueryResponse, string> => {
+  const { currentLocale } = useLanguage();
+
+  const lang = formatLang(currentLocale);
+  const units = formatUnits(currentLocale);
+
   return useQuery<WeatherQueryResponse, string>([WEATHER_CACHE, params], () =>
-    getCurrentWeather(params)
+    getCurrentWeather({ ...params, lang, units })
   );
 };

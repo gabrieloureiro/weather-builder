@@ -7,7 +7,8 @@ import {
 export async function getCurrentWeather({
   lat,
   lon,
-  units = "metric",
+  units,
+  lang,
 }: WeatherQueryParams): Promise<WeatherQueryResponse> {
   const { data } = await apiClient.get<WeatherQueryResponse>("weather", {
     params: {
@@ -15,6 +16,7 @@ export async function getCurrentWeather({
       lon,
       appid: process.env.NEXT_PUBLIC_OPEN_WETHER_API_KEY,
       units,
+      lang,
     },
   });
 

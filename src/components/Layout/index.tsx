@@ -3,7 +3,6 @@ import Head from "next/head";
 import { Header, Container } from "components";
 import { LayoutProps } from "./types";
 import { useIntl } from "react-intl";
-import * as C from "@chakra-ui/react";
 
 const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
   const { formatMessage } = useIntl();
@@ -18,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
     <>
       <Head>
         <title>{currentPageTitle}</title>
-        <meta name="description" content={formatMessage({ id: description })} />
+        <meta name="description" content={description} />
       </Head>
       <Container>
         <Header />

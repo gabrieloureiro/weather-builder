@@ -1,7 +1,7 @@
 import { MAX_AGE } from "constants/index";
 import { useRouter } from "next/router";
 import { setCookie, parseCookies } from "nookies";
-import React, {
+import {
   createContext,
   useState,
   useEffect,
@@ -40,7 +40,7 @@ function LanguageProvider({ children }: LanguageProviderProps): JSX.Element {
         path: "/",
       });
     }
-  }, []);
+  }, [locale]);
 
   function handleChangeLocale(initialLocale: string) {
     setCurrentLocale(initialLocale);

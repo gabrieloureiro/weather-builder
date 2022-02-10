@@ -1,3 +1,12 @@
 {
-  "page.home.title": "weatherbuilder"
+  "header.select.option.portuguese": "Portuguese",
+  "header.select.option.english": "English",
+
+  "page.home.title": "weatherbuilder",
+  "page.home.description": "A platform that provides climate data for your region.",
+  "page.home.card.temperature.min": "Min: {tempMin}",
+  "page.home.card.temperature.max": "Max: {tempMax}",
+  "page.home.card.temperature.feelsLike": "Thermal sensation: {feelsLike}",
+  "page.home.card.temperature.humidity": "Humidity: {humidity}%",
+  "page.home.card.temperature.pressure": "Atmospheric pressure: {pressure} hPa"
 }

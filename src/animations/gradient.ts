@@ -1,4 +1,4 @@
-const GRADIENT_ANIMATION = {
+export const GRADIENT_ANIMATION = {
   unMounted: { width: "0%" },
   mounted: {
     width: "100%",
@@ -9,5 +9,3 @@ const GRADIENT_ANIMATION = {
     },
   },
 };
-
-export default GRADIENT_ANIMATION;

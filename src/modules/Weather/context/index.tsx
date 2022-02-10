@@ -1,4 +1,11 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { useWeather } from "modules/Weather/hooks/use-weather";
 import {
   WeatherQueryParams,
@@ -6,10 +13,16 @@ import {
 } from "modules/Weather/types";
 import { parseCookies, setCookie } from "nookies";
 import { MAX_AGE } from "constants/index";
+import { useLanguage } from "context";
+import { formatLang } from "modules/Weather/utils";
 
 type WeatherContentContextValue = {
   weather: WeatherQueryResponse;
   isLoading: boolean;
+  isFetched: boolean;
+  isFetching: boolean;
+  isError: boolean;
+  onRefetch: () => void;
 };
 
 const WeatherContentContext = createContext<WeatherContentContextValue | null>(
@@ -23,15 +36,22 @@ export const WeatherContentProvider: React.FC = ({ children }) => {
   const { coordinates: coordinatesCookie } = parseCookies();
   const [currentLat, setCurrentLat] = useState<number>(0);
   const [currentLon, setCurrentLon] = useState<number>(0);
+  const { currentLocale } = useLanguage();
+
+  const lang = formatLang(currentLocale);
 
   const { data, isFetched, isFetching, isLoading, isError, refetch } =
-    useWeather({ lat: currentLat, lon: currentLon });
+    useWeather({ lat: currentLat, lon: currentLon, lang });
 
   const [currentContent, setCurrentContent] = useState<WeatherQueryResponse>(
     {} as WeatherQueryResponse
   );
 
   const isDefinedCoordinates = currentLat !== 0 && currentLon !== 0;
+
+  const onRefetch = useCallback(() => {
+    refetch();
+  }, [refetch]);
 
   const value = useMemo(
     () => ({
@@ -40,9 +60,9 @@ export const WeatherContentProvider: React.FC = ({ children }) => {
       isFetched,
       isFetching,
       isError,
-      refetch,
+      onRefetch,
     }),
-    [currentContent, isError, isFetched, isFetching, isLoading, refetch]
+    [currentContent, isError, isFetched, isFetching, isLoading, onRefetch]
   );
 
   useEffect(() => {

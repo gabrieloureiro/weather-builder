@@ -1,12 +1,15 @@
 import apiClient from "services/apiClient";
-import { WeatherQueryParams } from "../types";
+import {
+  WeatherQueryParams,
+  WeatherQueryResponse,
+} from "modules/Weather/types";
 
 export async function getCurrentWeather({
   lat,
   lon,
   units = "metric",
-}: WeatherQueryParams): Promise<any> {
-  const { data } = await apiClient.get<any>("weather", {
+}: WeatherQueryParams): Promise<WeatherQueryResponse> {
+  const { data } = await apiClient.get<WeatherQueryResponse>("weather", {
     params: {
       lat,
       lon,

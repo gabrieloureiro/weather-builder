@@ -1,13 +1,16 @@
 import { useQuery, UseQueryResult } from "react-query";
-import { getCurrentWeather } from "../services";
-import { WeatherQueryParams } from "../types";
+import { getCurrentWeather } from "modules/Weather/services";
+import {
+  WeatherQueryParams,
+  WeatherQueryResponse,
+} from "modules/Weather/types";
 
 const WEATHER_CACHE = "weather-cache";
 
-export default function useWeather(
+export const useWeather = (
   params: WeatherQueryParams
-): UseQueryResult<any, string> {
-  return useQuery<any, string>([WEATHER_CACHE, params], () =>
+): UseQueryResult<WeatherQueryResponse, string> => {
+  return useQuery<WeatherQueryResponse, string>([WEATHER_CACHE, params], () =>
     getCurrentWeather(params)
   );
-}
+};

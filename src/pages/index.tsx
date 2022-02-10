@@ -1,10 +1,15 @@
-import Weather from "modules/Weather/pages";
+import { useEffect, useState } from "react";
+import { WeatherContentProvider } from "modules/Weather/context";
+import dynamic from "next/dynamic";
 
-export default function Home() {
+const WeatherComponent = dynamic(() => import("modules/Weather/pages"));
+
+const Home: React.VFC = () => {
   return (
-    <div>
-      <Weather />
-      <h1>Hello world</h1>
-    </div>
+    <WeatherContentProvider>
+      <WeatherComponent />
+    </WeatherContentProvider>
   );
-}
+};
+
+export default Home;

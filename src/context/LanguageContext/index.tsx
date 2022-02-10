@@ -1,3 +1,4 @@
+import { MAX_AGE } from "constants/index";
 import { useRouter } from "next/router";
 import { setCookie, parseCookies } from "nookies";
 import React, {
@@ -16,8 +17,6 @@ interface LanguageContextInterface {
 interface LanguageProviderProps {
   children: ReactNode;
 }
-
-const MAX_AGE = 60 * 60 * 24 * 30;
 
 const LanguageContext = createContext({} as LanguageContextInterface);
 

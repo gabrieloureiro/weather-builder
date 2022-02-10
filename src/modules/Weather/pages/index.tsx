@@ -6,7 +6,8 @@ import { useWeatherContent } from "modules/Weather/context";
 
 const Weather: React.VFC = () => {
   const { formatMessage } = useIntl();
-  const { weather, isLoading, isFetching, isFetched } = useWeatherContent();
+  const { weather, isLoading, isFetching, isFetched, isError } =
+    useWeatherContent();
   const { isDesktop } = useMediaQuery();
 
   return (
@@ -25,6 +26,7 @@ const Weather: React.VFC = () => {
           isLoading={isLoading}
           isFetching={isFetching}
           isFetched={isFetched}
+          isError={isError}
         />
         <SkeletonCard />
         <SkeletonCard />

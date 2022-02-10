@@ -5,6 +5,7 @@ import * as C from "@chakra-ui/react";
 import { formatTemperature, handleChangeTemperaturePercentage } from "./utils";
 import { useIntl } from "react-intl";
 import { useLanguage } from "context";
+import SkeletonTemperatureCard from "./skeleton";
 
 const TemperatureCard: React.FC<TemperatureCardProps> = ({
   temp,
@@ -16,14 +17,19 @@ const TemperatureCard: React.FC<TemperatureCardProps> = ({
   isLoading,
   isFetching,
   isFetched,
+  isError,
 }) => {
   const { formatMessage } = useIntl();
   const { currentLocale } = useLanguage();
   const hasTemperaturePercent = !isLoading && temp && tempMax && isFetched;
   const isMinTemperature = temp === tempMin;
   const isMaxTemperature = temp === tempMax;
+  const showLoadingSkeleton =
+    (isLoading || isFetching) && !isFetched && !isError;
 
-  if (isLoading || isFetching) return <SkeletonCard />;
+  if (isError) return <SkeletonCard />;
+
+  if (showLoadingSkeleton) return <SkeletonTemperatureCard />;
 
   return (
     <Card highlightColor="yellow.400">

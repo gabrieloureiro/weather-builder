@@ -10,4 +10,5 @@ export type TemperatureCardProps = {
   isLoading: boolean;
   isFetching: boolean;
   isFetched: boolean;
+  isError: boolean;
 } & C.BoxProps;

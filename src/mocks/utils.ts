@@ -9,4 +9,4 @@ type Response = MockedResponse | Promise<MockedResponse>;
 export const responseResolver =
   (data: WeatherQueryResponse) =>
   (_, res: ResponseFunction, ctx: RestContext): Response =>
-    res(ctx.delay(2000), ctx.json(data));
+    res(ctx.delay(200), ctx.json(data));

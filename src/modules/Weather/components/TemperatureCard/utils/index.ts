@@ -6,21 +6,9 @@ export const formatTemperature = (
 ): string | undefined => {
   if (temp) {
     if (locale === LOCALE.PT_BR) {
-      return `${temp.toFixed()}º C`;
+      return `${temp.toFixed(1)}º C`;
     }
-    return `${temp.toFixed()}º F`;
+    return `${temp.toFixed(1)}º F`;
   }
   return undefined;
-};
-
-export const handleChangeTemperaturePercentage = (
-  isMinTemperature: boolean,
-  isMaxTemperature: boolean
-) => {
-  if (isMinTemperature) {
-    return 0;
-  } else if (isMaxTemperature) {
-    return 1;
-  }
-  return 0.5;
 };

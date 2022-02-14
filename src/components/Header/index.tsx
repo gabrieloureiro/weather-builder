@@ -29,7 +29,7 @@ const Header = () => {
       p="12px 24px"
       align="center"
       justify="space-between"
-      mb="184px"
+      mb="48px"
       variants={CARDS_ANIMATION}
       transition={TRANSITION}
       initial="unMounted"

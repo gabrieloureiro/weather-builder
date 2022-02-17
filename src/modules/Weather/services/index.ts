@@ -22,3 +22,22 @@ export async function getCurrentWeather({
 
   return data;
 }
+
+export async function getForecast({
+  lat,
+  lon,
+  units,
+  lang,
+}: WeatherQueryParams): Promise<WeatherQueryResponse> {
+  const { data } = await apiClient.get<WeatherQueryResponse>("forecast", {
+    params: {
+      lat,
+      lon,
+      appid: process.env.NEXT_PUBLIC_OPEN_WETHER_API_KEY,
+      units,
+      lang,
+    },
+  });
+
+  return data;
+}

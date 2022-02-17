@@ -15,15 +15,13 @@ import { parseCookies, setCookie } from "nookies";
 import { MAX_AGE } from "constants/index";
 import { useLanguage } from "context";
 import { formatLang } from "modules/Weather/utils";
+import { QueryEffects } from "types";
+import moment from "moment";
 
 type WeatherContentContextValue = {
   weather: WeatherQueryResponse;
-  isLoading: boolean;
-  isFetched: boolean;
-  isFetching: boolean;
-  isError: boolean;
   onRefetch: () => void;
-};
+} & QueryEffects;
 
 const WeatherContentContext = createContext<WeatherContentContextValue | null>(
   null

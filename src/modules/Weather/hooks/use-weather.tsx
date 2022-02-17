@@ -17,7 +17,12 @@ export const useWeather = (
   const lang = formatLang(currentLocale);
   const units = formatUnits(currentLocale);
 
-  return useQuery<WeatherQueryResponse, string>([WEATHER_CACHE, params], () =>
-    getCurrentWeather({ ...params, lang, units })
+  const isDefinedCoordinates = params.lat !== 0 && params.lon !== 0;
+
+  return useQuery<WeatherQueryResponse, string>(
+    [WEATHER_CACHE, params],
+    isDefinedCoordinates
+      ? () => getCurrentWeather({ ...params, lang, units })
+      : undefined
   );
 };

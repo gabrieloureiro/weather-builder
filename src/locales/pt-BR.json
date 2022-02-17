@@ -2,9 +2,16 @@
   "header.select.option.portuguese": "Português",
   "header.select.option.english": "Inglês",
 
+  "button.refresh.label": "Atualizar",
+  "button.refreshing.label": "Atualizando",
+
   "page.home.title": "weatherbuilder",
   "page.home.description": "Uma plataforma que provê os dados climáticos da sua região.",
-  "page.home.card.temperature.min": "Mín: {tempMin}",
+  "page.home.chart.temperature.heading": "Variação de temperatura entre {startDate} e {endDate}",
+  "page.home.chart.temperature.tooltip.min": "Mín: {tempMin}",
+  "page.home.chart.temperature.tooltip.current": "Atual: {currentTemp}",
+  "page.home.chart.temperature.tooltip.max": "Máx: {tempMax}",
+
   "page.home.card.temperature.max": "Máx: {tempMax}",
   "page.home.card.temperature.feelsLike": "Sensação térmica: {feelsLike}",
   "page.home.card.temperature.humidity": "Umidade: {humidity}%",

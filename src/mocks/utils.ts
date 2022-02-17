@@ -1,4 +1,3 @@
-import { WeatherQueryResponse } from "modules/Weather/types";
 import { ResponseFunction, RestContext, MockedResponse } from "msw";
 
 export const url = (path: string): string =>
@@ -7,6 +6,6 @@ export const url = (path: string): string =>
 type Response = MockedResponse | Promise<MockedResponse>;
 
 export const responseResolver =
-  (data: WeatherQueryResponse) =>
+  (data: unknown) =>
   (_, res: ResponseFunction, ctx: RestContext): Response =>
-    res(ctx.delay(200), ctx.json(data));
+    res(ctx.delay(2000), ctx.json(data));

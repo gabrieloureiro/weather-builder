@@ -6,6 +6,7 @@ if (typeof window === "undefined") {
 } else {
   const { worker } = require("./workers/browser");
   worker.start({
+    quiet: false,
     onUnhandledRequest: "bypass",
   });
 }

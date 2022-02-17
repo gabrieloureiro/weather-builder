@@ -5,19 +5,18 @@ import { useLanguage } from "context";
 import { motion } from "framer-motion";
 import { useIntl } from "react-intl";
 import { LOCALE } from "locales";
-import { useWeatherContent } from "modules/Weather/context";
+import { useWeatherContent } from "modules/Weather/context/weather";
 import { ChangeEvent } from "react";
+import { useForecastContent } from "modules/Weather/context";
 
 const MotionFlex = motion<Omit<C.FlexProps, "transition">>(C.Flex);
 
 const Header = () => {
   const { formatMessage } = useIntl();
   const { currentLocale, handleChangeLocale } = useLanguage();
-  const { onRefetch } = useWeatherContent();
 
   const onChange = (event: ChangeEvent<HTMLSelectElement>) => {
     handleChangeLocale(event.target.value);
-    onRefetch();
   };
 
   return (
@@ -29,7 +28,7 @@ const Header = () => {
       p="12px 24px"
       align="center"
       justify="space-between"
-      mb="48px"
+      mb="32px"
       variants={CARDS_ANIMATION}
       transition={TRANSITION}
       initial="unMounted"
@@ -48,6 +47,7 @@ const Header = () => {
           .
         </C.Text>
       </C.Text>
+
       <C.Select
         ml="12px"
         color="white"

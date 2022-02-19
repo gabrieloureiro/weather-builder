@@ -3,13 +3,13 @@ import * as C from "@chakra-ui/react";
 import { useWeatherContent } from "modules/Weather/context";
 import { BsArrowRight, BsWind } from "react-icons/bs";
 import { useIntl } from "react-intl";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import SkeletonWindSpeedCard from "./skeleton";
 import { formatSpeedUnit } from "modules/Weather/utils";
 import { useLanguage } from "context";
 import { TRANSITION } from "animations";
 
-const WindSpeedCard = () => {
+const WindSpeedCard: React.VFC = () => {
   const { weather, isLoading, isError, isFetched, isFetching } =
     useWeatherContent();
   const { currentLocale } = useLanguage();

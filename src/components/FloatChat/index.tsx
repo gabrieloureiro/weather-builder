@@ -3,7 +3,7 @@ import { ImWhatsapp } from "react-icons/im";
 import { useIntl } from "react-intl";
 import * as S from "./styles";
 
-const FloatChat = () => {
+const FloatChat: React.VFC = () => {
   const { formatMessage } = useIntl();
 
   return (

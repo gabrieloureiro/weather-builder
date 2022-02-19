@@ -15,11 +15,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useIntl } from "react-intl";
-import { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import SkeletonLimitsTemperatureCard from "./skeleton";
 import { TRANSITION } from "animations";
 
-const LimitsTemperatureCard = () => {
+const LimitsTemperatureCard: React.VFC = () => {
   const { weather, isLoading, isFetching, isFetched, isError } =
     useWeatherContent();
   const { currentLocale } = useLanguage();

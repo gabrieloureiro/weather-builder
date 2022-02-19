@@ -12,7 +12,7 @@ import { formatTemperature } from "modules/Weather/utils";
 import { useIntl } from "react-intl";
 import { useLanguage } from "context";
 
-const TemperatureChart = () => {
+const TemperatureChart: React.VFC = () => {
   const { forecast } = useForecastContent();
   const { currentLocale } = useLanguage();
   const { formatMessage } = useIntl();

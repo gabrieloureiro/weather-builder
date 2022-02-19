@@ -12,7 +12,7 @@ import SkeletonCurrentTimeLocaleCard from "./skeleton";
 import { useIntl } from "react-intl";
 import { TRANSITION } from "animations";
 
-const CurrentTimeLocaleCard = () => {
+const CurrentTimeLocaleCard: React.VFC = () => {
   const { weather, isLoading, isFetching, isFetched, isError } =
     useWeatherContent();
   const { formatMessage } = useIntl();

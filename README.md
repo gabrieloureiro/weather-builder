@@ -67,11 +67,11 @@
 
 <!-- GETTING STARTED -->
 
+## Please don't forget to accept the application access your location.
+
 ## Getting Started
 
 If you do not want to run the project in the development environment, you can access it at [DEMO](https://weather-builder.vercel.app/).
-
-## Please don't forget to accept the application access your location.
 
 ### Prerequisites
 
@@ -108,6 +108,8 @@ You need to install npm (to install yarn, hahaha)
    ```JS
    yarn dev or yarn dev:mock
    ```
+   
+   ##
    
 ## Please don't forget to accept the application access your location.
 

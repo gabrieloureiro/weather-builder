@@ -18,10 +18,6 @@ const TemperatureCard: React.VFC = () => {
       return <SkeletonTemperatureCard />;
     }
 
-    if (isError) {
-      return <SkeletonCard h="450px" maxW="100%" mt="16px" />;
-    }
-
     return (
       <>
         <C.Text mb="12px" fontSize={["14px", "16px"]}>
@@ -33,9 +29,11 @@ const TemperatureCard: React.VFC = () => {
         <TemperatureChart />
       </>
     );
-  }, [endDate, formatMessage, isError, showDetailedSkeleton, startDate]);
+  }, [endDate, formatMessage, showDetailedSkeleton, startDate]);
 
-  return (
+  return isError ? (
+    <SkeletonCard h="450px" maxW="100%" mt="16px" />
+  ) : (
     <Card h="450px" maxW="100%" mt="16px" highlightColor="cyan.400">
       {content}
     </Card>

@@ -48,9 +48,7 @@
 
 ## About The Project
 
-![image](https://user-images.githubusercontent.com/39869298/109913983-c1e25280-7c8d-11eb-9061-e429b56a1dac.png)
-
-This platform allows the user to buy seats in on custom flights.
+![image](https://user-images.githubusercontent.com/39869298/154817478-1d3793f7-ec06-42f9-91bf-986a81d6c4a0.png)
 
 ### Built With
 

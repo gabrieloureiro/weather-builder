@@ -106,7 +106,7 @@ You need to install npm (to install yarn, hahaha)
    ```
 3. Run the command
    ```JS
-   yarn dev or yarn dev:mock
+   yarn dev:mock
    ```
    
 ##

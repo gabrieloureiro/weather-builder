@@ -74,6 +74,12 @@ If you do not want to run the project in the development environment, you can ac
 
 You need to install npm (to install yarn, hahaha)
 
+- node
+  ```sh
+   nvm use 16.0.0 
+  ```
+  
+
 - npm
 
   ```sh
@@ -85,11 +91,6 @@ You need to install npm (to install yarn, hahaha)
   npm install -g yarn
   ```
   
-  - node
-  ```
-  nvm use 16.0.0 
-  ```
-
 ### Installation
 
 1. Clone the repo
@@ -102,7 +103,7 @@ You need to install npm (to install yarn, hahaha)
    ```
 3. Run the command
    ```JS
-   yarn dev
+   yarn dev or yarn dev:mock
    ```
 
 <!-- CONTACT -->

@@ -6,7 +6,7 @@ import { TemperatureChart } from "..";
 import SkeletonTemperatureCard from "./skeleton";
 import { useMemo } from "react";
 
-const TemperatureCard = () => {
+const TemperatureCard: React.VFC = () => {
   const { formatMessage } = useIntl();
   const { startDate, endDate, isLoading, isFetching, isFetched, isError } =
     useForecastContent();

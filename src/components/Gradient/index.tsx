@@ -1,7 +1,7 @@
 import { GRADIENT_ANIMATION } from "animations";
 import * as S from "./styles";
 
-const Gradient = () => {
+const Gradient: React.VFC = () => {
   return (
     <S.Gradient
       variants={GRADIENT_ANIMATION}

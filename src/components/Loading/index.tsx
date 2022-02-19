@@ -1,7 +1,7 @@
 import * as C from "@chakra-ui/react";
 import { skeletonColors } from "utils/skeleton-colors";
 
-const Loading = () => {
+const Loading: React.VFC = () => {
   return (
     <C.HStack justify="center" align="center" w="100%" h="100vh" spacing="8px">
       <C.Skeleton w="100%" maxW="29px" h="35px" {...skeletonColors} />

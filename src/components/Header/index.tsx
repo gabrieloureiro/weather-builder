@@ -9,7 +9,7 @@ import { ChangeEvent } from "react";
 
 const MotionFlex = motion<Omit<C.FlexProps, "transition">>(C.Flex);
 
-const Header = () => {
+const Header: React.VFC = () => {
   const { formatMessage } = useIntl();
   const { currentLocale, handleChangeLocale } = useLanguage();
 

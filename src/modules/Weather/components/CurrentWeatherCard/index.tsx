@@ -7,7 +7,7 @@ import SkeletonCurrentWeatherCard from "./skeleton";
 import { useMemo } from "react";
 import { TRANSITION } from "animations";
 
-const CurrentWeatherCard = () => {
+const CurrentWeatherCard: React.VFC = () => {
   const { weather, isLoading, isFetching, isFetched, isError } =
     useWeatherContent();
   const { currentLocale } = useLanguage();

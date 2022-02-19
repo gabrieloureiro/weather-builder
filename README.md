@@ -14,7 +14,7 @@
       An incredible challenge made for Platform Builders!
     <br />
     <br />
-    <a href="https:/weather-builder.vercel.app/">View Demo</a>
+    <a href="https://weather-builder.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/gabrieloureiro/weather-builder/issues">Report Bug</a>
     ·
@@ -59,6 +59,7 @@
 - [Nookies](https://github.com/maticzav/nookies)
 - [Framer Motion](https://www.framer.com/api/motion/)
 - [Recharts](https://recharts.org/en-US)
+- [React Query](https://react-query.tanstack.com/)
 
 - [ESLint](https:///)
 - [Prettier](https://)
@@ -68,7 +69,9 @@
 
 ## Getting Started
 
-If you do not want to run the project in the development environment, you can access it at [DEMO](https:/weather-builder.vercel.app/).
+If you do not want to run the project in the development environment, you can access it at [DEMO](https://weather-builder.vercel.app/).
+
+## Please don't forget to accept the application access your location.
 
 ### Prerequisites
 
@@ -105,6 +108,8 @@ You need to install npm (to install yarn, hahaha)
    ```JS
    yarn dev or yarn dev:mock
    ```
+   
+## Please don't forget to accept the application access your location.
 
 <!-- CONTACT -->
 
@@ -113,8 +118,6 @@ You need to install npm (to install yarn, hahaha)
 Linkedin - [gabrieloureiro](https://linkedin.com/in/gabrieloureiro)
 
 Email - [gabrieloureirof@gmail.com](mailto:gabrieloureirof@gmail.com)
-
-![Stackes][stacks]
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -129,5 +132,4 @@ Email - [gabrieloureirof@gmail.com](mailto:gabrieloureirof@gmail.com)
 [issues-url]: https://github.com/gabrieloureiro/weather-builder/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/gabrieloureiro
-[product-screenshot]: images/screenshot.png
 [stacks]: https://user-images.githubusercontent.com/39869298/109377578-f8ddf000-78aa-11eb-87d8-2ff40514e30f.png

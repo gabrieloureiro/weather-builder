@@ -8,19 +8,17 @@
 <br />
 <p align="center">
 
-  <img src="/public/images/flapper.png" alt="flapper" width="140" height="65">
-
-  <h3 align="center">Flapper Frontend Challenge</h3>
+  <h3 align="center">Weather Builder</h3>
 
   <p align="center">
-      An incredible challenge made for Flapper!
+      An incredible challenge made for Platform Builders!
     <br />
     <br />
-    <a href="https:/weaher-builder.vercel.app/">View Demo</a>
+    <a href="https:/weather-builder.vercel.app/">View Demo</a>
     ·
-    <a href="https://github.com/gabrieloureiroweaher-builder/issues">Report Bug</a>
+    <a href="https://github.com/gabrieloureiro/weather-builder/issues">Report Bug</a>
     ·
-    <a href="https://github.com/gabrieloureiroweaher-builder/issues">Request Feature</a>
+    <a href="https://github.com/gabrieloureiro/weather-builder/issues">Request Feature</a>
   </p>
 </p>
 
@@ -58,12 +56,11 @@ This platform allows the user to buy seats in on custom flights.
 
 - [React](https://reactjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
-- [Styled Components](https://styled-components.com/)
 - [Next.js](https://nextjs.org/)
-- [Redux](https://react-redux.js.org/)
-- [Redux-Saga](https://redux-saga.js.org/)
-- [Redux Persist](https://github.com/rt2zz/redux-persist)
+- [Chakra-UI](https://chakra-ui.com/)
+- [Nookies](https://github.com/maticzav/nookies)
 - [Framer Motion](https://www.framer.com/api/motion/)
+- [Recharts](https://recharts.org/en-US)
 
 - [ESLint](https:///)
 - [Prettier](https://)
@@ -73,7 +70,7 @@ This platform allows the user to buy seats in on custom flights.
 
 ## Getting Started
 
-If you do not want to run the project in the development environment, you can access it at [DEMO](https:/weaher-builder.vercel.app/).
+If you do not want to run the project in the development environment, you can access it at [DEMO](https:/weather-builder.vercel.app/).
 
 ### Prerequisites
 
@@ -94,7 +91,7 @@ You need to install npm (to install yarn, hahaha)
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/gabrieloureiroweaher-builder.git
+   git clone https://github.com/gabrieloureiro/weather-builder.git
    ```
 2. Install YARN packages
    ```sh
@@ -119,13 +116,13 @@ Email - [gabrieloureirof@gmail.com](mailto:gabrieloureirof@gmail.com)
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/gabrieloureiro/weather-builder.svg?style=for-the-badge
-[contributors-url]: https://github.com/gabrieloureiroweaher-builder/graphs/contributors
+[contributors-url]: https://github.com/gabrieloureiro/weather-builder/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/gabrieloureiro/weather-builder.svg?style=for-the-badge
-[forks-url]: https://github.com/gabrieloureiroweaher-builder/network/members
+[forks-url]: https://github.com/gabrieloureiro/weather-builder/network/members
 [stars-shield]: https://img.shields.io/github/stars/gabrieloureiro/weather-builder.svg?style=for-the-badge
-[stars-url]: https://github.com/gabrieloureiroweaher-builder/stargazers
+[stars-url]: https://github.com/gabrieloureiro/weather-builder/stargazers
 [issues-shield]: https://img.shields.io/github/issues/gabrieloureiro/weather-builder.svg?style=for-the-badge
-[issues-url]: https://github.com/gabrieloureiroweaher-builder/issues
+[issues-url]: https://github.com/gabrieloureiro/weather-builder/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/gabrieloureiro
 [product-screenshot]: images/screenshot.png

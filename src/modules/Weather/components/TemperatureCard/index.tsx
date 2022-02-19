@@ -18,7 +18,7 @@ const TemperatureCard: React.VFC = () => {
     isError,
   } = useForecastContent();
 
-  const hasNoData = isError || !startDate || !endDate || !forecast;
+  const hasNoData = isError && (!startDate || !endDate || !forecast);
 
   const showDetailedSkeleton = (isLoading || isFetching) && !isFetched;
 

@@ -20,6 +20,6 @@ export const useWeather = (
     [WEATHER_CACHE, params],
     isDefinedCoordinates
       ? () => getCurrentWeather({ ...params, lang, units })
-      : undefined
+      : null
   );
 };

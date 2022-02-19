@@ -1,6 +1,6 @@
 import { memo } from "react";
 import Head from "next/head";
-import { Header, Container, FloatChat } from "components";
+import { Header, Container, FloatChat, Gradient } from "components";
 import { LayoutProps } from "./types";
 import { useIntl } from "react-intl";
 
@@ -19,6 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
         <title>{currentPageTitle}</title>
         <meta name="description" content={description} />
       </Head>
+      <Gradient />
       <Container>
         <Header />
         {children}

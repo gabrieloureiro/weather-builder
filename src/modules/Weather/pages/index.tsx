@@ -1,10 +1,4 @@
-import {
-  Carousel,
-  Gradient,
-  Layout,
-  RefreshButton,
-  SkeletonCard,
-} from "components";
+import { Carousel, Layout, RefreshButton } from "components";
 import { useMediaQuery } from "hooks/use-media-query";
 import { useIntl } from "react-intl";
 import {
@@ -81,7 +75,6 @@ const Weather: React.VFC = () => {
         </C.Flex>
       </MotionFlex>
       <TemperatureCard />
-      <Gradient />
     </Layout>
   );
 };

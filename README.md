@@ -109,7 +109,7 @@ You need to install npm (to install yarn, hahaha)
    yarn dev or yarn dev:mock
    ```
    
-   ##
+##
    
 ## Please don't forget to accept the application access your location.
 

@@ -1,16 +1,13 @@
 import { useQuery, UseQueryResult } from "react-query";
 import { getCurrentWeather } from "modules/Weather/services";
-import {
-  WeatherQueryParams,
-  WeatherQueryResponse,
-} from "modules/Weather/types";
+import { QueryParams, WeatherQueryResponse } from "modules/Weather/types";
 import { useLanguage } from "context";
 import { formatLang, formatUnits } from "../utils";
 
 const WEATHER_CACHE = "weather-cache";
 
 export const useWeather = (
-  params: WeatherQueryParams
+  params: QueryParams
 ): UseQueryResult<WeatherQueryResponse, string> => {
   const { currentLocale } = useLanguage();
 

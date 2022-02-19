@@ -7,10 +7,7 @@ import {
   useState,
 } from "react";
 import { useWeather } from "modules/Weather/hooks/use-weather";
-import {
-  WeatherQueryParams,
-  WeatherQueryResponse,
-} from "modules/Weather/types";
+import { QueryParams, WeatherQueryResponse } from "modules/Weather/types";
 import { parseCookies, setCookie } from "nookies";
 import { MAX_AGE } from "constants/index";
 import { useLanguage } from "context";
@@ -76,7 +73,7 @@ export const WeatherContentProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     if (coordinatesCookie) {
-      const { lat: cookieLat, lon: cookieLon }: WeatherQueryParams =
+      const { lat: cookieLat, lon: cookieLon }: QueryParams =
         JSON.parse(coordinatesCookie);
 
       setCurrentLat(cookieLat);

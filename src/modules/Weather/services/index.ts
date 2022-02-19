@@ -1,7 +1,8 @@
 import apiClient from "services/apiClient";
 import {
-  WeatherQueryParams,
+  QueryParams,
   WeatherQueryResponse,
+  ForecastQueryResponse,
 } from "modules/Weather/types";
 
 export async function getCurrentWeather({
@@ -9,7 +10,7 @@ export async function getCurrentWeather({
   lon,
   units,
   lang,
-}: WeatherQueryParams): Promise<WeatherQueryResponse> {
+}: QueryParams): Promise<WeatherQueryResponse> {
   const { data } = await apiClient.get<WeatherQueryResponse>("weather", {
     params: {
       lat,
@@ -28,8 +29,8 @@ export async function getForecast({
   lon,
   units,
   lang,
-}: WeatherQueryParams): Promise<WeatherQueryResponse> {
-  const { data } = await apiClient.get<WeatherQueryResponse>("forecast", {
+}: QueryParams): Promise<ForecastQueryResponse> {
+  const { data } = await apiClient.get<ForecastQueryResponse>("forecast", {
     params: {
       lat,
       lon,

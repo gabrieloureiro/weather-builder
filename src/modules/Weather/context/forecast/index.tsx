@@ -7,7 +7,10 @@ import {
   useState,
 } from "react";
 import { useForecast } from "modules/Weather/hooks/use-forecast";
-import { WeatherQueryParams as ForecastQueryParams } from "modules/Weather/types";
+import {
+  ForecastQueryResponse,
+  QueryParams as ForecastQueryParams,
+} from "modules/Weather/types";
 import { parseCookies, setCookie } from "nookies";
 import { MAX_AGE } from "constants/index";
 import { useLanguage } from "context";
@@ -21,7 +24,7 @@ type PeriodProps = {
 };
 
 type ForecastContentContextValue = {
-  forecast: any;
+  forecast: ForecastQueryResponse;
   onRefetch: () => void;
 } & QueryEffects &
   PeriodProps;
@@ -44,7 +47,9 @@ export const ForecastContentProvider: React.FC = ({ children }) => {
   const { data, isFetched, isFetching, isLoading, isError, refetch } =
     useForecast({ lat: currentLat, lon: currentLon, lang });
 
-  const [currentContent, setCurrentContent] = useState<any>({} as any);
+  const [currentContent, setCurrentContent] = useState<ForecastQueryResponse>(
+    {} as ForecastQueryResponse
+  );
 
   const isDefinedCoordinates = currentLat !== 0 && currentLon !== 0;
 

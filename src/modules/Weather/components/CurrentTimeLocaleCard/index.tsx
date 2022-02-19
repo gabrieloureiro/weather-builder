@@ -116,7 +116,7 @@ const CurrentTimeLocaleCard: React.VFC = () => {
   ]);
 
   return isError ? (
-    <SkeletonCard />
+    <SkeletonCard maxW={isCustomMedia ? "350px" : "auto"} />
   ) : (
     <Card
       transition={{ ...TRANSITION, delay: 0.75 }}

@@ -1,0 +1,43 @@
+{
+  "coord": {
+    "lon": -38.5061,
+    "lat": -3.8086
+  },
+  "weather": [
+    {
+      "id": 803,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 27.99,
+    "feels_like": 31.19,
+    "temp_min": 27.99,
+    "temp_max": 28.37,
+    "pressure": 1011,
+    "humidity": 74
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 3.09,
+    "deg": 90
+  },
+  "clouds": {
+    "all": 75
+  },
+  "dt": 1644492479,
+  "sys": {
+    "type": 1,
+    "id": 8363,
+    "country": "BR",
+    "sunrise": 1644482459,
+    "sunset": 1644526540
+  },
+  "timezone": -10800,
+  "id": 3393046,
+  "name": "Parangaba",
+  "cod": 200
+}

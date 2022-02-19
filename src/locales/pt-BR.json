@@ -1,3 +1,36 @@
 {
-  "page.hub.title": "Weather Builder"
+  "float-chat.message": "Oi, meu nome é {name}. Você gostou do meu trabalho? Fala comigo no whatsapp!",
+
+  "header.select.option.portuguese": "Português",
+  "header.select.option.english": "Inglês",
+
+  "button.refresh.label": "Atualizar",
+  "button.refreshing.label": "Atualizando",
+
+  "page.home.title": "weatherbuilder",
+  "page.home.description": "Uma plataforma que provê os dados climáticos da sua região.",
+
+  "page.home.card.current-time.label.timezone": "Fuso horário: {timezone}",
+  "page.home.card.current-time.label.clouds": "Cobertura de nuvens: {clouds}%",
+  "page.home.card.current-time.label.humidity": "Umidade do ar: {humidity}%",
+
+  "page.home.chart.temperature.heading": "Variação de temperatura entre {startDate} e {endDate}",
+  "page.home.chart.temperature.tooltip.min": "Mín: {tempMin}",
+  "page.home.chart.temperature.tooltip.current": "Atual: {currentTemp}",
+  "page.home.chart.temperature.tooltip.max": "Máx: {tempMax}",
+
+  "page.home.chart.current-temperature.label": "Δ Temperatura",
+  "page.home.chart.current-temperature.tooltip.max": "Máx: {tempMax}",
+  "page.home.chart.current-temperature.tooltip.min": "Mín: {tempMin}",
+  "page.home.chart.current-temperature.tooltip.feelsLike": "Sensação: {feelsLike}",
+
+  "page.home.card.sunrise.label": "O sol nasce as",
+  "page.home.card.sunset.label": "O sol se põe as",
+
+  "page.home.card.wind-speed.label": "Ventos de {windSpeed}",
+
+  "page.home.card.temperature.max": "Máx: {tempMax}",
+  "page.home.card.temperature.feelsLike": "Sensação térmica: {feelsLike}",
+  "page.home.card.temperature.humidity": "Umidade: {humidity}%",
+  "page.home.card.temperature.pressure": "Pressão atmosférica: {pressure} hPa"
 }

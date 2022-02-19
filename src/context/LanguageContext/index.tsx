@@ -1,6 +1,7 @@
+import { MAX_AGE } from "constants/index";
 import { useRouter } from "next/router";
 import { setCookie, parseCookies } from "nookies";
-import React, {
+import {
   createContext,
   useState,
   useEffect,
@@ -16,8 +17,6 @@ interface LanguageContextInterface {
 interface LanguageProviderProps {
   children: ReactNode;
 }
-
-const MAX_AGE = 60 * 60 * 24 * 30;
 
 const LanguageContext = createContext({} as LanguageContextInterface);
 
@@ -41,7 +40,7 @@ function LanguageProvider({ children }: LanguageProviderProps): JSX.Element {
         path: "/",
       });
     }
-  }, []);
+  }, [locale]);
 
   function handleChangeLocale(initialLocale: string) {
     setCurrentLocale(initialLocale);

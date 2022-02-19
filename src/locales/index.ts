@@ -1,7 +1,7 @@
 import ptBR from "./pt-BR.json";
 import enUS from "./en-US.json";
 
-const LOCALE = {
+export const LOCALE = {
   PT_BR: "pt",
   EN_US: "en",
 };

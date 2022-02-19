@@ -1,17 +1,42 @@
 import apiClient from "services/apiClient";
-import { WeatherQueryParams } from "../types";
+import {
+  QueryParams,
+  WeatherQueryResponse,
+  ForecastQueryResponse,
+} from "modules/Weather/types";
 
 export async function getCurrentWeather({
   lat,
   lon,
-  units = "metric",
-}: WeatherQueryParams): Promise<any> {
-  const { data } = await apiClient.get<any>("weather", {
+  units,
+  lang,
+}: QueryParams): Promise<WeatherQueryResponse> {
+  const { data } = await apiClient.get<WeatherQueryResponse>("weather", {
     params: {
       lat,
       lon,
       appid: process.env.NEXT_PUBLIC_OPEN_WETHER_API_KEY,
       units,
+      lang,
+    },
+  });
+
+  return data;
+}
+
+export async function getForecast({
+  lat,
+  lon,
+  units,
+  lang,
+}: QueryParams): Promise<ForecastQueryResponse> {
+  const { data } = await apiClient.get<ForecastQueryResponse>("forecast", {
+    params: {
+      lat,
+      lon,
+      appid: process.env.NEXT_PUBLIC_OPEN_WETHER_API_KEY,
+      units,
+      lang,
     },
   });
 

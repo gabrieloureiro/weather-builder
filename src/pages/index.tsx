@@ -1,10 +1,21 @@
-import Weather from "modules/Weather/pages";
+import { ForecastContentProvider } from "modules/Weather/context";
+import { WeatherContentProvider } from "modules/Weather/context/weather";
+import dynamic from "next/dynamic";
+import { Loading } from "components";
 
-export default function Home() {
+const WeatherComponent = dynamic(() => import("modules/Weather/pages"), {
+  ssr: false,
+  loading: () => <Loading />,
+});
+
+const Home: React.VFC = () => {
   return (
-    <div>
-      <Weather />
-      <h1>Hello world</h1>
-    </div>
+    <ForecastContentProvider>
+      <WeatherContentProvider>
+        <WeatherComponent />
+      </WeatherContentProvider>
+    </ForecastContentProvider>
   );
-}
+};
+
+export default Home;

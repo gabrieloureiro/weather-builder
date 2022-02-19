@@ -15,7 +15,7 @@ const SunHoursInfoCard: React.VFC<SunHoursInfoCardProps> = ({
   const { weather, isError, isLoading, isFetched, isFetching } =
     useWeatherContent();
 
-  const hasNoData = isError || !weather;
+  const hasNoData = isError && !weather;
 
   const { formatMessage } = useIntl();
 

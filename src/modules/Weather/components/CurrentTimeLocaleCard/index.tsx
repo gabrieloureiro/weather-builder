@@ -20,7 +20,7 @@ const CurrentTimeLocaleCard: React.VFC = () => {
 
   const showDetailedSkeleton = (isLoading || isFetching) && !isFetched;
 
-  const hasNoData = isError || !weather;
+  const hasNoData = isError && !weather;
 
   const content = useMemo(() => {
     if (showDetailedSkeleton) {

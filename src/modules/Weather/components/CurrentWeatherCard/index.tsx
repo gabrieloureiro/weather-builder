@@ -12,7 +12,7 @@ const CurrentWeatherCard: React.VFC = () => {
     useWeatherContent();
   const { currentLocale } = useLanguage();
 
-  const hasNoData = isError || !weather;
+  const hasNoData = isError && !weather;
 
   const showDetailedSkeleton = (isLoading || isFetching) && !isFetched;
 

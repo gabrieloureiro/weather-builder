@@ -75,18 +75,11 @@ If you do not want to run the project in the development environment, you can ac
 
 ### Prerequisites
 
-You need to install npm (to install yarn, hahaha)
+You need to install:
 
 - node
   ```sh
    nvm use 16.0.0 
-  ```
-  
-
-- npm
-
-  ```sh
-  npm install npm@latest -g
   ```
 
 - yarn

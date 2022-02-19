@@ -12,6 +12,8 @@ const CurrentWeatherCard: React.VFC = () => {
     useWeatherContent();
   const { currentLocale } = useLanguage();
 
+  const hasNoData = isError || !weather;
+
   const showDetailedSkeleton = (isLoading || isFetching) && !isFetched;
 
   const content = useMemo(() => {
@@ -37,7 +39,7 @@ const CurrentWeatherCard: React.VFC = () => {
     weather?.weather,
   ]);
 
-  return isError ? (
+  return hasNoData ? (
     <SkeletonCard />
   ) : (
     <Card

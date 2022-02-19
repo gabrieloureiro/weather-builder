@@ -15,6 +15,8 @@ const WindSpeedCard: React.VFC = () => {
   const { currentLocale } = useLanguage();
   const { formatMessage } = useIntl();
 
+  const hasNoData = isError || !weather;
+
   const showDetailedSkeleton = (isLoading || isFetching) && !isFetched;
 
   const content = useMemo(() => {
@@ -40,7 +42,7 @@ const WindSpeedCard: React.VFC = () => {
     );
   }, [currentLocale, formatMessage, showDetailedSkeleton, weather?.wind.speed]);
 
-  return isError ? (
+  return hasNoData ? (
     <SkeletonCard />
   ) : (
     <Card

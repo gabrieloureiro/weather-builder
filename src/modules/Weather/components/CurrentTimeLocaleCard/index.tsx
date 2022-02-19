@@ -20,6 +20,8 @@ const CurrentTimeLocaleCard: React.VFC = () => {
 
   const showDetailedSkeleton = (isLoading || isFetching) && !isFetched;
 
+  const hasNoData = isError || !weather;
+
   const content = useMemo(() => {
     if (showDetailedSkeleton) {
       return <SkeletonCurrentTimeLocaleCard />;
@@ -115,7 +117,7 @@ const CurrentTimeLocaleCard: React.VFC = () => {
     weather?.timezone,
   ]);
 
-  return isError ? (
+  return hasNoData ? (
     <SkeletonCard maxW={isCustomMedia ? "350px" : "auto"} />
   ) : (
     <Card

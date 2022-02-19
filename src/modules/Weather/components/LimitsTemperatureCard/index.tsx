@@ -27,6 +27,8 @@ const LimitsTemperatureCard: React.VFC = () => {
 
   const showDetailedSkeleton = (isLoading || isFetching) && !isFetched;
 
+  const hasNoData = isError || !weather;
+
   const CustomTooltip = useCallback(
     ({ active, payload }) => {
       if (active && payload && payload.length) {
@@ -140,7 +142,7 @@ const LimitsTemperatureCard: React.VFC = () => {
     weather?.main.temp_min,
   ]);
 
-  return isError ? (
+  return hasNoData ? (
     <SkeletonCard />
   ) : (
     <Card

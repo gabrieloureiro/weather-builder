@@ -8,8 +8,17 @@ import { useMemo } from "react";
 
 const TemperatureCard: React.VFC = () => {
   const { formatMessage } = useIntl();
-  const { startDate, endDate, isLoading, isFetching, isFetched, isError } =
-    useForecastContent();
+  const {
+    forecast,
+    startDate,
+    endDate,
+    isLoading,
+    isFetching,
+    isFetched,
+    isError,
+  } = useForecastContent();
+
+  const hasNoData = isError || !startDate || !endDate || !forecast;
 
   const showDetailedSkeleton = (isLoading || isFetching) && !isFetched;
 
@@ -31,7 +40,7 @@ const TemperatureCard: React.VFC = () => {
     );
   }, [endDate, formatMessage, showDetailedSkeleton, startDate]);
 
-  return isError ? (
+  return hasNoData ? (
     <SkeletonCard h="450px" maxW="100%" mt="16px" />
   ) : (
     <Card h="450px" maxW="100%" mt="16px" highlightColor="cyan.400">

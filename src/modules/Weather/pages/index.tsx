@@ -2,16 +2,20 @@ import { Carousel, Layout, RefreshButton, SkeletonCard } from "components";
 import { useMediaQuery } from "hooks/use-media-query";
 import { useIntl } from "react-intl";
 import {
+  SunHoursInfoCard,
   CurrentWeatherCard,
   CurrentTimeLocaleCard,
+  LimitsTemperatureCard,
   TemperatureCard,
 } from "modules/Weather/components";
 import * as C from "@chakra-ui/react";
 import { useForecastContent, useWeatherContent } from "../context";
+import { useCallback } from "react";
 
 const Weather: React.VFC = () => {
   const { formatMessage } = useIntl();
   const { isDesktop } = useMediaQuery();
+  const [isCustomMedia] = C.useMediaQuery("(min-width: 1104px)");
   const {
     isFetched: isFetchedWeather,
     isFetching: isFetchingWeather,
@@ -28,10 +32,10 @@ const Weather: React.VFC = () => {
 
   const isFetched = isFetchedWeather || isFetchedForecast;
 
-  const onRefetch = () => {
+  const onRefetch = useCallback(() => {
     onRefetchWeather();
     onRefetchForecast();
-  };
+  }, [onRefetchForecast, onRefetchWeather]);
 
   return (
     <Layout
@@ -45,17 +49,19 @@ const Weather: React.VFC = () => {
           isFetched={isFetched}
         />
       </C.Flex>
-      <C.Flex flexDirection={["column", "row"]}>
+      <C.Flex flexDirection={isCustomMedia ? "row" : "column"}>
         <CurrentTimeLocaleCard />
-
         <C.Flex
-          flex="1"
+          w="100%"
           flexDirection="column"
-          ml={["0", "16px"]}
-          mt={["16px", "0"]}
+          ml={isCustomMedia ? "16px" : 0}
+          mt={isCustomMedia ? "0" : "16px"}
         >
           <Carousel show={isDesktop ? 3 : 1}>
             <CurrentWeatherCard />
+            <LimitsTemperatureCard />
+            <SunHoursInfoCard isSunrise />
+            <SunHoursInfoCard />
             <SkeletonCard />
             <SkeletonCard />
           </Carousel>

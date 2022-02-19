@@ -6,7 +6,7 @@ const Container: React.FC = ({ children }) => {
       maxW="100%"
       minH="100vh"
       position="relative"
-      p="96px 24px 24px"
+      p={["32px 24px 24px", "96px 24px 24px"]}
       transition="padding 0.5s ease"
     >
       <C.Box as="main" m="0 auto" maxW="1180px">

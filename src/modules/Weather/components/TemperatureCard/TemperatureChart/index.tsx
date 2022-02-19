@@ -20,7 +20,7 @@ const TemperatureChart = () => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <C.Box bg="gray.700" p="12px" borderRadius="12px">
+        <C.Stack bg="gray.900" spacing="6px" p="12px" borderRadius="12px">
           <C.Text color="red.400" fontSize={["12px", "14px"]}>
             {formatMessage(
               { id: "page.home.chart.temperature.tooltip.max" },
@@ -41,7 +41,7 @@ const TemperatureChart = () => {
               { tempMin: formatTemperature(payload[0].value, currentLocale) }
             )}
           </C.Text>
-        </C.Box>
+        </C.Stack>
       );
     }
 

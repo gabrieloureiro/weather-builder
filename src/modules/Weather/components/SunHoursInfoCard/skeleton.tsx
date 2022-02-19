@@ -1,7 +1,7 @@
 import * as C from "@chakra-ui/react";
 import { skeletonColors } from "utils/skeleton-colors";
 
-const SkeletonCurrentWeatherCard = () => {
+const SkeletonSunHoursInfoCard = () => {
   return (
     <C.Center flexDirection="column">
       <C.Skeleton
@@ -17,4 +17,4 @@ const SkeletonCurrentWeatherCard = () => {
   );
 };
 
-export default SkeletonCurrentWeatherCard;
+export default SkeletonSunHoursInfoCard;

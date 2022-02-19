@@ -1,6 +1,7 @@
 import { LOCALE } from "locales";
 import { LANG_PT_BR, UNITS } from "modules/Weather/constants";
 import moment from "moment";
+import { WeatherQueryResponse } from "../types";
 
 export const formatTemperature = (
   temp: number,
@@ -45,5 +46,17 @@ export const formatPeriod = (period: string) => {
 export const getWeatherIcon = (icon: string | undefined) => {
   if (icon) {
     return `http://openweathermap.org/img/wn/${icon}@2x.png`;
+  }
+};
+
+export const formatCurrentTime = (dt: number | undefined) => {
+  if (dt) {
+    return moment.unix(dt).format("DD/MM/YYYY HH:mm:ss");
+  }
+};
+
+export const formatTimezone = (timezone: number | undefined) => {
+  if (timezone) {
+    return `UTC ${timezone / 3600}:00`;
   }
 };

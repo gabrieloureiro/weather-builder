@@ -12,6 +12,14 @@
   "page.home.chart.temperature.tooltip.current": "Atual: {currentTemp}",
   "page.home.chart.temperature.tooltip.max": "Máx: {tempMax}",
 
+  "page.home.chart.current-temperature.label": "Δ Temperatura",
+  "page.home.chart.current-temperature.tooltip.max": "Máx: {tempMax}",
+  "page.home.chart.current-temperature.tooltip.min": "Mín: {tempMin}",
+  "page.home.chart.current-temperature.tooltip.feelsLike": "Sensação: {feelsLike}",
+
+  "page.home.card.sunrise.label": "O sol nasce as",
+  "page.home.card.sunset.label": "O sol se põe as",
+
   "page.home.card.temperature.max": "Máx: {tempMax}",
   "page.home.card.temperature.feelsLike": "Sensação térmica: {feelsLike}",
   "page.home.card.temperature.humidity": "Umidade: {humidity}%",

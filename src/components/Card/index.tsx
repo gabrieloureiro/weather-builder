@@ -1,8 +1,8 @@
 import * as S from "./styles";
-import * as C from "@chakra-ui/react";
 
 import { CARDS_ANIMATION, TRANSITION } from "animations";
 import { CardProps } from "./types";
+import { useMediaQuery } from "hooks/use-media-query";
 
 const Card: React.FC<CardProps> = ({
   children,
@@ -11,12 +11,13 @@ const Card: React.FC<CardProps> = ({
   highlightColor,
   ...rest
 }) => {
+  const { isDesktop } = useMediaQuery();
   return (
     <S.Card
-      flex="1"
-      maxW={maxW}
+      w="100%"
+      maxW={isDesktop ? maxW : "auto"}
       h={h}
-      p="24px"
+      p={["24px 12px", "24px"]}
       borderRadius="8px 8px 0 0"
       bg="gray.700"
       border="2px solid"

@@ -4,6 +4,7 @@ import { formatTemperature, getWeatherIcon } from "modules/Weather/utils";
 import { useWeatherContent } from "modules/Weather/context";
 import { useLanguage } from "context";
 import SkeletonCurrentWeatherCard from "./skeleton";
+import { useMemo } from "react";
 
 const CurrentWeatherCard = () => {
   const { weather, isLoading, isFetching, isFetched, isError } =
@@ -12,16 +13,16 @@ const CurrentWeatherCard = () => {
 
   const showDetailedSkeleton = (isLoading || isFetching) && !isFetched;
 
-  if (showDetailedSkeleton) {
-    return <SkeletonCurrentWeatherCard />;
-  }
+  const content = useMemo(() => {
+    if (showDetailedSkeleton) {
+      return <SkeletonCurrentWeatherCard />;
+    }
 
-  if (isError) {
-    return <SkeletonCard />;
-  }
+    if (isError) {
+      return <SkeletonCard />;
+    }
 
-  return (
-    <Card highlightColor="yellow.400">
+    return (
       <C.Center flexDirection="column">
         <C.Box borderRadius="12px" bg="gray.500">
           <C.Image src={getWeatherIcon(weather?.weather[0].icon)} />
@@ -31,8 +32,16 @@ const CurrentWeatherCard = () => {
         </C.Text>
         <C.Text textAlign="center">{weather?.weather[0].description}</C.Text>
       </C.Center>
-    </Card>
-  );
+    );
+  }, [
+    currentLocale,
+    isError,
+    showDetailedSkeleton,
+    weather?.main.temp,
+    weather?.weather,
+  ]);
+
+  return <Card highlightColor="yellow.500">{content}</Card>;
 };
 
 export default CurrentWeatherCard;

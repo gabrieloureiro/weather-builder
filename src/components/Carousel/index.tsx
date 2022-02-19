@@ -3,16 +3,17 @@ import { ReactNode, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import * as C from "@chakra-ui/react";
 
-const ArrowButton = (props) => (
+const ArrowButton: React.FC<C.ButtonProps> = (props) => (
   <C.Button
     position="absolute"
     zIndex="1"
     width="41px"
     height="40px"
     borderRadius="50%"
-    backgroundColor="white"
-    border="1px solid #ddd"
-    color="cyan.400"
+    bg="gray.800"
+    border="1px solid"
+    borderColor="gray.600"
+    color="yellow.400"
     boxShadow="md"
     {...props}
   />

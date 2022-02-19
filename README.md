@@ -84,6 +84,11 @@ You need to install npm (to install yarn, hahaha)
   ```sh
   npm install -g yarn
   ```
+  
+  - node
+  ```
+  nvm use 16.0.0 
+  ```
 
 ### Installation
 

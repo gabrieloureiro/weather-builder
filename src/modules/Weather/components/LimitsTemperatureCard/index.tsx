@@ -17,6 +17,7 @@ import {
 import { useIntl } from "react-intl";
 import { useCallback, useMemo } from "react";
 import SkeletonLimitsTemperatureCard from "./skeleton";
+import { TRANSITION } from "animations";
 
 const LimitsTemperatureCard = () => {
   const { weather, isLoading, isFetching, isFetched, isError } =
@@ -108,11 +109,6 @@ const LimitsTemperatureCard = () => {
     if (showDetailedSkeleton) {
       return <SkeletonLimitsTemperatureCard />;
     }
-
-    if (isError) {
-      return <SkeletonCard />;
-    }
-
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
@@ -138,14 +134,22 @@ const LimitsTemperatureCard = () => {
   }, [
     CustomTooltip,
     formatMessage,
-    isError,
     showDetailedSkeleton,
     weather?.main.feels_like,
     weather?.main.temp_max,
     weather?.main.temp_min,
   ]);
 
-  return <Card highlightColor="yellow.400">{content}</Card>;
+  return isError ? (
+    <SkeletonCard />
+  ) : (
+    <Card
+      transition={{ ...TRANSITION, delay: 0.95 }}
+      highlightColor="yellow.400"
+    >
+      {content}
+    </Card>
+  );
 };
 
 export default LimitsTemperatureCard;

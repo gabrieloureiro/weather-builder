@@ -5,9 +5,7 @@ import { useLanguage } from "context";
 import { motion } from "framer-motion";
 import { useIntl } from "react-intl";
 import { LOCALE } from "locales";
-import { useWeatherContent } from "modules/Weather/context/weather";
 import { ChangeEvent } from "react";
-import { useForecastContent } from "modules/Weather/context";
 
 const MotionFlex = motion<Omit<C.FlexProps, "transition">>(C.Flex);
 

@@ -7,6 +7,7 @@ import { SunHoursInfoCardProps } from "./types";
 import { useMemo } from "react";
 import SkeletonSunHoursInfoCard from "./skeleton";
 import { useIntl } from "react-intl";
+import { TRANSITION } from "animations";
 
 const SunHoursInfoCard: React.VFC<SunHoursInfoCardProps> = ({
   isSunrise = false,
@@ -33,12 +34,8 @@ const SunHoursInfoCard: React.VFC<SunHoursInfoCardProps> = ({
       return <SkeletonSunHoursInfoCard />;
     }
 
-    if (isError) {
-      return <SkeletonCard />;
-    }
-
     return (
-      <C.Center flexDirection="column">
+      <C.Center flexDirection="column" h="100%">
         <C.Center w="100px" h="100px" borderRadius="12px" bg="gray.500">
           <C.Icon
             as={currentIcon}
@@ -62,13 +59,17 @@ const SunHoursInfoCard: React.VFC<SunHoursInfoCardProps> = ({
     currentIcon,
     currentLabel,
     formattedCurrentHour,
-    isError,
     isSunrise,
     showDetailedSkeleton,
   ]);
 
-  return (
-    <Card highlightColor={isSunrise ? "yellow.200" : "cyan.500"}>
+  return isError ? (
+    <SkeletonCard />
+  ) : (
+    <Card
+      transition={{ ...TRANSITION, delay: isSunrise ? 1.15 : 1.25 }}
+      highlightColor={isSunrise ? "yellow.100" : "white"}
+    >
       {content}
     </Card>
   );

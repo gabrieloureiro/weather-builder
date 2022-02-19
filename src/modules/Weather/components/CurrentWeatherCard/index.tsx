@@ -5,6 +5,7 @@ import { useWeatherContent } from "modules/Weather/context";
 import { useLanguage } from "context";
 import SkeletonCurrentWeatherCard from "./skeleton";
 import { useMemo } from "react";
+import { TRANSITION } from "animations";
 
 const CurrentWeatherCard = () => {
   const { weather, isLoading, isFetching, isFetched, isError } =
@@ -18,12 +19,8 @@ const CurrentWeatherCard = () => {
       return <SkeletonCurrentWeatherCard />;
     }
 
-    if (isError) {
-      return <SkeletonCard />;
-    }
-
     return (
-      <C.Center flexDirection="column">
+      <C.Center flexDirection="column" h="100%">
         <C.Box borderRadius="12px" bg="gray.500">
           <C.Image src={getWeatherIcon(weather?.weather[0].icon)} />
         </C.Box>
@@ -35,13 +32,21 @@ const CurrentWeatherCard = () => {
     );
   }, [
     currentLocale,
-    isError,
     showDetailedSkeleton,
     weather?.main.temp,
     weather?.weather,
   ]);
 
-  return <Card highlightColor="yellow.500">{content}</Card>;
+  return isError ? (
+    <SkeletonCard />
+  ) : (
+    <Card
+      transition={{ ...TRANSITION, delay: 0.85 }}
+      highlightColor="yellow.500"
+    >
+      {content}
+    </Card>
+  );
 };
 
 export default CurrentWeatherCard;

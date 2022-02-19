@@ -4,7 +4,7 @@ import { useMediaQuery } from "hooks/use-media-query";
 
 const SkeletonCard: React.VFC<C.BoxProps> = ({
   maxW = "350px",
-  h = "200px",
+  h = "240px",
   ...rest
 }) => {
   const { isDesktop } = useMediaQuery();

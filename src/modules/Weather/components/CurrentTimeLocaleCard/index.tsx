@@ -6,22 +6,23 @@ import { HiClock } from "react-icons/hi";
 import { MdLocationOn, MdCloud } from "react-icons/md";
 import { IoMdCalendar } from "react-icons/io";
 import { useMemo } from "react";
+import { WiHumidity } from "react-icons/wi";
+
 import SkeletonCurrentTimeLocaleCard from "./skeleton";
+import { useIntl } from "react-intl";
+import { TRANSITION } from "animations";
 
 const CurrentTimeLocaleCard = () => {
   const { weather, isLoading, isFetching, isFetched, isError } =
     useWeatherContent();
-  const [isCustomMedia] = C.useMediaQuery("(min-width: 1104px)");
+  const { formatMessage } = useIntl();
+  const [isCustomMedia] = C.useMediaQuery("(min-width: 1160px)");
 
   const showDetailedSkeleton = (isLoading || isFetching) && !isFetched;
 
   const content = useMemo(() => {
     if (showDetailedSkeleton) {
       return <SkeletonCurrentTimeLocaleCard />;
-    }
-
-    if (isError) {
-      return <SkeletonCard />;
     }
 
     return (
@@ -51,20 +52,6 @@ const CurrentTimeLocaleCard = () => {
           </C.Text>
         </C.Flex>
         <C.Flex align="center">
-          <C.Icon as={MdCloud} fontSize="24px" />
-          <C.Text
-            ml="8px"
-            fontSize={["14px", "16px"]}
-            sx={{
-              "@media (max-width: 690px)": {
-                fontSize: "14px",
-              },
-            }}
-          >
-            Cobertura de nuvens: {weather?.clouds.all}%
-          </C.Text>
-        </C.Flex>
-        <C.Flex align="center">
           <C.Icon as={HiClock} fontSize="24px" />
           <C.Text
             ml="8px"
@@ -75,23 +62,64 @@ const CurrentTimeLocaleCard = () => {
               },
             }}
           >
-            Fuso horário: {formatTimezone(weather?.timezone)}
+            {formatMessage(
+              { id: "page.home.card.current-time.label.timezone" },
+              { timezone: formatTimezone(weather?.timezone) }
+            )}
+          </C.Text>
+        </C.Flex>
+        <C.Flex align="center">
+          <C.Icon as={MdCloud} fontSize="24px" />
+          <C.Text
+            ml="8px"
+            fontSize={["14px", "16px"]}
+            sx={{
+              "@media (max-width: 690px)": {
+                fontSize: "14px",
+              },
+            }}
+          >
+            {formatMessage(
+              { id: "page.home.card.current-time.label.clouds" },
+              { clouds: weather?.clouds.all }
+            )}
+          </C.Text>
+        </C.Flex>
+        <C.Flex align="center">
+          <C.Icon as={WiHumidity} fontSize="24px" />
+          <C.Text
+            ml="8px"
+            fontSize={["14px", "16px"]}
+            sx={{
+              "@media (max-width: 690px)": {
+                fontSize: "14px",
+              },
+            }}
+          >
+            {formatMessage(
+              { id: "page.home.card.current-time.label.humidity" },
+              { humidity: weather?.main.humidity }
+            )}
           </C.Text>
         </C.Flex>
       </C.Stack>
     );
   }, [
-    isError,
+    formatMessage,
     showDetailedSkeleton,
     weather?.clouds.all,
     weather?.dt,
+    weather?.main.humidity,
     weather?.name,
     weather?.sys.country,
     weather?.timezone,
   ]);
 
-  return (
+  return isError ? (
+    <SkeletonCard />
+  ) : (
     <Card
+      transition={{ ...TRANSITION, delay: 0.75 }}
       highlightColor="red.400"
       maxW={isCustomMedia ? "350px" : "auto"}
       h={["auto", "unset"]}

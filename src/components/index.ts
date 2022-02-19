@@ -5,3 +5,6 @@ export { default as Header } from "./Header";
 export { default as Card } from "./Card";
 export { default as SkeletonCard } from "./Card/skeleton";
 export { default as RefreshButton } from "./RefreshButton";
+export { default as Loading } from "./Loading";
+export { default as FloatChat } from "./FloatChat";
+export { default as Gradient } from "./Gradient";

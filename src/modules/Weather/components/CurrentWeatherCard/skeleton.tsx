@@ -3,7 +3,7 @@ import { skeletonColors } from "utils/skeleton-colors";
 
 const SkeletonCurrentWeatherCard = () => {
   return (
-    <C.Center flexDirection="column">
+    <C.Center flexDirection="column" h="100%">
       <C.Skeleton
         h="100px"
         maxW="100px"

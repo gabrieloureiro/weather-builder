@@ -1,14 +1,16 @@
 import * as S from "./styles";
 
-import { CARDS_ANIMATION, TRANSITION } from "animations";
 import { CardProps } from "./types";
 import { useMediaQuery } from "hooks/use-media-query";
+import { CARDS_ANIMATION, TRANSITION } from "animations";
 
 const Card: React.FC<CardProps> = ({
   children,
   maxW = "350px",
-  h = "200px",
+  h = "240px",
   highlightColor,
+  variants = CARDS_ANIMATION,
+  transition = TRANSITION,
   ...rest
 }) => {
   const { isDesktop } = useMediaQuery();
@@ -26,8 +28,8 @@ const Card: React.FC<CardProps> = ({
       _hover={{
         borderColor: highlightColor,
       }}
-      variants={CARDS_ANIMATION}
-      transition={TRANSITION}
+      variants={variants}
+      transition={transition}
       initial="unMounted"
       animate="mounted"
       exit="unMounted"

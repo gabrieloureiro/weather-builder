@@ -1,19 +1,26 @@
 import * as C from "@chakra-ui/react";
+import * as S from "./styles";
+
 import { MdRefresh } from "react-icons/md";
 import { useIntl } from "react-intl";
 import { RefreshButtonProps } from "./types";
+import {
+  REFRESH_BUTTON_ANIMATION,
+  REFRESH_BUTTON_TRANSITION,
+} from "./animations";
 
 const RefreshButton: React.VFC<RefreshButtonProps> = ({
   onRefetch,
   isFetching,
   isFetched,
+  ...rest
 }) => {
   const { formatMessage } = useIntl();
 
   const showRefreshingLabel = !isFetched && isFetching;
 
   return (
-    <C.Button
+    <S.Button
       leftIcon={<MdRefresh size="24px" />}
       w={["100%", "180px"]}
       h="56px"
@@ -23,6 +30,12 @@ const RefreshButton: React.VFC<RefreshButtonProps> = ({
         bg: "gray.600",
       }}
       onClick={onRefetch}
+      variants={REFRESH_BUTTON_ANIMATION}
+      transition={REFRESH_BUTTON_TRANSITION}
+      initial="unMounted"
+      animate="mounted"
+      exit="unMounted"
+      {...rest}
     >
       <C.Text fontSize={["14px", "16px"]}>
         {formatMessage({
@@ -31,7 +44,7 @@ const RefreshButton: React.VFC<RefreshButtonProps> = ({
             : "button.refresh.label",
         })}
       </C.Text>
-    </C.Button>
+    </S.Button>
   );
 };
 

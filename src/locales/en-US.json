@@ -1,4 +1,6 @@
 {
+  "float-chat.message": "Hello, my name is {name}. Did you enjoy my job? Click here or in the button below and talk to me!",
+
   "header.select.option.portuguese": "Portuguese",
   "header.select.option.english": "English",
 
@@ -7,6 +9,11 @@
 
   "page.home.title": "weatherbuilder",
   "page.home.description": "A platform that provides climate data for your region.",
+
+  "page.home.card.current-time.label.timezone": "Timezone: {timezone}",
+  "page.home.card.current-time.label.clouds": "Cloud coverage: {clouds}%",
+  "page.home.card.current-time.label.humidity": "Air humidity: {humidity}%",
+
   "page.home.chart.temperature.heading": "Temperature variation between {startDate} and {endDate}",
   "page.home.chart.temperature.tooltip.min": "Min: {tempMin}",
   "page.home.chart.temperature.tooltip.current": "Current: {currentTemp}",
@@ -19,6 +26,8 @@
 
   "page.home.card.sunrise.label": "The sun rises at",
   "page.home.card.sunset.label": "The sun sets at",
+
+  "page.home.card.wind-speed.label": "{windSpeed} winds",
 
   "page.home.card.temperature.min": "Min: {tempMin}",
   "page.home.card.temperature.max": "Max: {tempMax}",

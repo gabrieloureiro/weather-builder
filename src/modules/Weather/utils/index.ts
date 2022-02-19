@@ -60,3 +60,12 @@ export const formatTimezone = (timezone: number | undefined) => {
     return `UTC ${timezone / 3600}:00`;
   }
 };
+
+export const formatSpeedUnit = (speed: number | undefined, locale: string) => {
+  if (speed) {
+    if (locale === LOCALE.PT_BR) {
+      return `${(speed * 3.6).toFixed(2)} km/h`;
+    }
+    return `${speed.toFixed(2)} mph`;
+  }
+};

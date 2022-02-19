@@ -4,4 +4,7 @@ export type RefreshButtonProps = {
   onRefetch: () => void;
   isFetching: boolean;
   isFetched: boolean;
-} & C.ButtonProps;
+} & Omit<
+  C.ButtonProps,
+  "transition" | "onAnimationStart" | "onDragStart" | "onDragEnd" | "onDrag"
+>;

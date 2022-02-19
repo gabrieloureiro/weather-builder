@@ -1,8 +1,10 @@
 import { memo } from "react";
 import Head from "next/head";
-import { Header, Container } from "components";
+import { Header, Container, FloatChat } from "components";
 import { LayoutProps } from "./types";
 import { useIntl } from "react-intl";
+import * as S from "../Gradient/styles";
+import { GRADIENT_ANIMATION } from "animations";
 
 const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
   const { formatMessage } = useIntl();
@@ -22,6 +24,7 @@ const Layout: React.FC<LayoutProps> = ({ title, description, children }) => {
       <Container>
         <Header />
         {children}
+        <FloatChat />
       </Container>
     </>
   );

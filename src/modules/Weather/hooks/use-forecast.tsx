@@ -16,8 +16,7 @@ export const useForecast = (
 
   const isDefinedCoordinates = params.lat !== 0 && params.lon !== 0;
 
-  return useQuery<ForecastQueryResponse, string>(
-    [FORECAST_CACHE, params],
-    isDefinedCoordinates ? () => getForecast({ ...params, lang, units }) : null
+  return useQuery<ForecastQueryResponse, string>([FORECAST_CACHE, params], () =>
+    getForecast({ ...params, lang, units })
   );
 };

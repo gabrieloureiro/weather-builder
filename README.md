@@ -11,7 +11,7 @@
   <h3 align="center">Weather Builder</h3>
 
   <p align="center">
-      An incredible challenge made for Platform Builders!
+      An incredible challenge made for build the weather in your region!
     <br />
     <br />
     <a href="https://weather-builder.vercel.app/">View Demo</a>

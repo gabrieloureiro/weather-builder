@@ -41,7 +41,7 @@ const CurrentTimeLocaleCard: React.VFC = () => {
             >
               {weather?.name !== ZERO_POINT
                 ? `${weather?.name} - ${weather?.sys.country}`
-                : "Lat: 0 // Long: 0"}
+                : "Latitude: 0 | Longitude: 0"}
             </C.Text>
           </C.Flex>
         }

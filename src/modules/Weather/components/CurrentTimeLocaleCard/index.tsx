@@ -12,6 +12,8 @@ import SkeletonCurrentTimeLocaleCard from "./skeleton";
 import { useIntl } from "react-intl";
 import { TRANSITION } from "animations";
 
+const ZERO_POINT = "Globe";
+
 const CurrentTimeLocaleCard: React.VFC = () => {
   const { weather, isLoading, isFetching, isFetched, isError } =
     useWeatherContent();
@@ -29,16 +31,20 @@ const CurrentTimeLocaleCard: React.VFC = () => {
 
     return (
       <C.Stack spacing="16px">
-        <C.Flex align="center" flexWrap="wrap">
-          <C.Icon as={MdLocationOn} fontSize="24px" />
-          <C.Text
-            ml="8px"
-            fontSize={["14px", "16px", "18px"]}
-            lineHeight={["14px", "16px", "16px"]}
-          >
-            {weather?.name} - {weather?.sys.country}
-          </C.Text>
-        </C.Flex>
+        {
+          <C.Flex align="center" flexWrap="wrap">
+            <C.Icon as={MdLocationOn} fontSize="24px" />
+            <C.Text
+              ml="8px"
+              fontSize={["14px", "16px", "18px"]}
+              lineHeight={["14px", "16px", "16px"]}
+            >
+              {weather?.name !== ZERO_POINT
+                ? `${weather?.name} - ${weather?.sys.country}`
+                : "Latitude: 0 | Longitude: 0"}
+            </C.Text>
+          </C.Flex>
+        }
         <C.Flex align="center">
           <C.Icon as={IoMdCalendar} fontSize="24px" />
           <C.Text
@@ -64,10 +70,14 @@ const CurrentTimeLocaleCard: React.VFC = () => {
               },
             }}
           >
-            {formatMessage(
-              { id: "page.home.card.current-time.label.timezone" },
-              { timezone: formatTimezone(weather?.timezone) }
-            )}
+            {weather?.timezone
+              ? formatMessage(
+                  { id: "page.home.card.current-time.label.timezone" },
+                  { timezone: formatTimezone(weather?.timezone) }
+                )
+              : formatMessage({
+                  id: "page.home.card.current-time.label.globe",
+                })}
           </C.Text>
         </C.Flex>
         <C.Flex align="center">

@@ -80,7 +80,11 @@ export const ForecastContentProvider: React.FC = ({ children }) => {
   );
 
   useEffect(() => {
-    if (!coordinatesCookie && navigator.geolocation) {
+    if (
+      !coordinatesCookie &&
+      navigator.geolocation &&
+      "geolocation" in navigator
+    ) {
       navigator.geolocation.getCurrentPosition((position) =>
         setCurrentLat(position.coords.latitude)
       );

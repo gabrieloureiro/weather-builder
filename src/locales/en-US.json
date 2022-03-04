@@ -10,6 +10,7 @@
   "page.home.title": "weatherbuilder",
   "page.home.description": "A platform that provides climate data for your region.",
 
+  "page.home.card.current-time.label.globe": "No access to your location",
   "page.home.card.current-time.label.timezone": "Timezone: {timezone}",
   "page.home.card.current-time.label.clouds": "Cloud coverage: {clouds}%",
   "page.home.card.current-time.label.humidity": "Air humidity: {humidity}%",
